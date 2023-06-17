@@ -18,3 +18,17 @@ class Teacher(Person):
         for student in students:
             marks = random.randint(0, 100)
             # set marks for the subject for each student
+
+
+class Student(Person):
+    def __init__(self, name) -> None:
+        super().__init__(name)
+        self.__id = None
+
+    @property
+    def id(self):
+        return self.__id
+
+    @id.setter
+    def id(self, value):
+        self.__id == value

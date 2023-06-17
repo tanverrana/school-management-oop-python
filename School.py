@@ -10,8 +10,7 @@ class School:
         self.classrooms[classroom.name] = classroom
 
     def add_teacher(self, subject, teacher):
-        if subject in self.teachers:
-            self.teachers[subject] = teacher
+        self.teachers[subject] = teacher
 
     def student_admission(self, student, classroom_name):
         if classroom_name in self.classrooms:
@@ -29,6 +28,7 @@ class ClassRoom:
 
     def add_student(self, student):
         serial_id = f'{self.name}-{len(self.students)+1}'
+        student.id = serial_id
         self.students.append(student)
 
     def __str__(self) -> str:
