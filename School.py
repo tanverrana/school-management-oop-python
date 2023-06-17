@@ -2,11 +2,16 @@ class School:
     def __init__(self, name, address) -> None:
         self.name = name
         self.address = address
+        self.teachers = []
         # composition
-        self.classroom = {}
+        self.classrooms = {}
 
     def add_classroom(self, classroom):
         self.classrooms[classroom.name] = classroom
+
+    def add_teacher(self, subject, teacher):
+        if subject in self.teachers:
+            self.teachers[subject] = teacher
 
     def student_admission(self, student, classroom_name):
         if classroom_name in self.classrooms:
