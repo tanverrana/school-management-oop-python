@@ -23,7 +23,11 @@ class Teacher(Person):
 class Student(Person):
     def __init__(self, name) -> None:
         super().__init__(name)
+        self.classroom = None
         self.__id = None
+        self.subjects = []
+        self.marks = {}
+        self.grade = None
 
     @property
     def id(self):
