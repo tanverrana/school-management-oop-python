@@ -16,10 +16,10 @@ class Teacher(Person):
     def __repr__(self) -> str:
         return f'{self.name}'
 
-    def take_exam(self, students):
-        for student in students:
-            marks = random.randint(0, 100)
-            # set marks for the subject for each student
+    def evaluate_exam(self):
+        marks = random.randint(0, 100)
+        return marks
+        # set marks for the subject for each student
 
 
 class Student(Person):
