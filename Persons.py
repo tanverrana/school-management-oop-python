@@ -1,4 +1,5 @@
 import random
+from School import School
 
 
 class Person:
@@ -30,6 +31,16 @@ class Student(Person):
         self.marks = {}
         self.subject_grade = {}
         self.grade = None
+
+    def calculate_final_grade(self):
+        sum = 0
+        for grade in self.subject_grade.values():
+            point = School.grade_to_value(grade)
+            sum += point
+            print(self.name, grade, point)
+        points_avg = sum/len(self.subject_grade)
+        self.grade = School.value_to_grade(points_avg)
+        print(f'{self.name} final grade: {self.grade} with points avg {points_avg}')
 
     @property
     def id(self):
