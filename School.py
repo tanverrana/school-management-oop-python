@@ -37,8 +37,10 @@ class School:
                   'Teacher Name: ', subject.teacher.name)
 
         print('------------Student Exam Marks------------')
-        for key, value in eight.students[0].marks.items():
-            print(key, value)
+        for student in eight.students:
+            for key, value in student.marks.items():
+                print(student.name, key, value)
+            print('_______End Student___________')
 
         return ''
 
