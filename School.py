@@ -31,6 +31,11 @@ class School:
         for student in eight.students:
             print(student.name)
 
+        print('-------------Subjects---------------')
+        for subject in eight.subjects:
+            print('Subject name: ', subject.name, '--->',
+                  'Teacher Name: ', subject.teacher.name)
+
         return ''
 
 
@@ -46,9 +51,20 @@ class ClassRoom:
         student.id = serial_id
         self.students.append(student)
 
+    def add_subject(self, subject):
+        self.subjects.append(subject)
+
     def __str__(self) -> str:
         return f'{self.name}-{len(self.students)}'
 
     # todo: sort students by grade
     def get_top_students(self):
         pass
+
+
+class Subject:
+    def __init__(self, name, teacher) -> None:
+        self.name = name
+        self.teacher = teacher
+        self.max_marks = 100
+        self.pass_marks = 30

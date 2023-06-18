@@ -7,14 +7,16 @@ class Person:
 
 
 class Teacher(Person):
-    def __init__(self, name, subject) -> None:
+    def __init__(self, name) -> None:
         super().__init__(name)
-        self.subject = subject
 
     def teach(self):
         pass
 
-    def take_exam(self, subject, students):
+    def __repr__(self) -> str:
+        return f'{self.name}'
+
+    def take_exam(self, students):
         for student in students:
             marks = random.randint(0, 100)
             # set marks for the subject for each student

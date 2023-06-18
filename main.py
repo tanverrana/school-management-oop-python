@@ -1,5 +1,5 @@
-from School import School, ClassRoom
-from Persons import Student
+from School import School, ClassRoom, Subject
+from Persons import Student, Teacher
 
 
 def main():
@@ -19,6 +19,20 @@ def main():
     school.student_admission(shakib)
     mushi = Student('Mushfiqur Rahim', eight)
     school.student_admission(mushi)
+
+    # subjects
+    physics_teacher = Teacher('Haturu singh')
+    physics = Subject('physics', physics_teacher)
+    eight.add_subject(physics)
+
+    chemestry_teacher = Teacher('Anal Donald')
+    chemestry = Subject('chemestry', chemestry_teacher)
+    eight.add_subject(chemestry)
+
+    biology_teacher = Teacher('Thompash')
+    biology = Subject('biology', biology_teacher)
+    eight.add_subject(biology)
+
     print(school)
 
 
