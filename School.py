@@ -27,7 +27,9 @@ class School:
 
         print('--------------Students------------')
         eight = self.classrooms['eight']
-        print('Number of sutdents:', len(eight.students))
+        print('Number of sutdents for class Eight:', len(eight.students))
+        for student in eight.students:
+            print(student.name)
 
         return ''
 
