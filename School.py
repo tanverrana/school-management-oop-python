@@ -19,6 +19,12 @@ class School:
         else:
             print(f'No classroom as named{classroom_name}')
 
+    def __repr__(self) -> str:
+        print('---------All Classroom----------')
+        for key, value in self.classrooms.items():
+            print(key)
+        return ''
+
 
 class ClassRoom:
     def __init__(self, name) -> None:
